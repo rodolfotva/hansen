@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<title>Hansen Contabilidade</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/estilo.css">
+		
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src='js/bootstrap.min.js' type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#homeItemMenu").addClass("active");
+				
+				$('#slide img:eq(0)').addClass('ativo').show();
+
+				$('#segundaParte1').hide();
+				$('#segundaParte2').hide();
+				$('#segundaParte3').hide();
+				$('#parceirosConteudo1').hide();
+				$('#parceirosConteudo2').hide();
+				$('#parceirosConteudo3').hide();
+				$('#parceirosConteudo4').hide();
+				$('#direitos').hide();
+				
+				<!-- var texto = $('.ativo').attr('alt'); -->
+				<!-- $('#slide p').hide().html(texto).delay(500).fadeIn(1000,'linear'); -->
+			
+				setInterval(slide,5000);
+
+				function slide(){
+					if($('.ativo').next().size()){
+						$('.ativo').fadeOut(1500,'linear').removeClass('ativo').next().fadeIn(1500,'linear').addClass('ativo');
+					}else{
+						$('.ativo').fadeOut(1500,'linear').removeClass('ativo');
+						$('#slide img:eq(0)').fadeIn(1500,'linear').addClass('ativo');
+					}
+
+					<!-- var texto = $(".ativo").attr("alt"); -->
+					<!-- $('#slide p').hide().html(texto).delay(500).fadeIn(1000,'linear'); -->
+				}
+				
+				$(window).scroll(function() { 
+					if($(this).scrollTop() > 150){
+						$('#segundaParte1').slideDown('slow');
+						$('#segundaParte2').slideDown('slow');
+						$('#segundaParte3').slideDown('slow');
+					}
+					
+					if($(this).scrollTop() > 600){
+						$("#parceirosConteudo div").first().show("fast", function showNext() {
+							$( this ).next("div").show("fast", showNext );
+						});
+					}
+					
+					if($(this).scrollTop() > 800){
+						$('#direitos').show('slow');
+					}
+				});
+			});
+		</script>
+		
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default" role="navigation" >
+			<div class="container">
+				<div class="navbar-header" >
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#" style="padding-top:0px;">
+						<img src="img/LogosHansen.png" style="width:152px; height:50px" />
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-1" >
+					<ul class="nav navbar-nav">
+						<li id="homeItemMenu" ><a href="index.html" >Home</a></li>
+						<li id="empresaItemMenu" ><a href="empresa.html">A Empresa</a></li>
+						<li id="servicosItemMenu" ><a href="#">Nossos Serviços</a></li>
+						<li id="consultoriaItemMenu" class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultorias <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Juridicas</a></li>
+								<li><a href="#">Planejamento Fiscal e Tributário</a></li>
+							</ul>
+						</li>
+						<li id="contatoItemMenu" ><a href="#">Contato</a></li>
+					</ul>
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input id="pesquisar" type="text" class="form-control" placeholder="Pesquisar">
+						</div>
+						<button type="submit" class="btn btn-default">Pesquisar</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<div class="wrapper cinzae8e8e8" role="main" >
+			<div class="container" id="slideShow" >
+				
+				<div class="row" id="slideShowRow">
+					<div id="slideShow1" class="col-xs-12 col-sm-12 col-md-12">
+						<figure id="slide">
+							<!--  <p></p> -->
+							<img src="img/pic1.png" style="width:1140px; height:400px"/ />
+							<img src="img/pic2.png" style="width:1140px; height:400px"/ />
+							<img src="img/pic3.png" style="width:1140px; height:400px"/ />
+						</figure>
+					</div>
+				</div>
+				
+			</div>	
+		</div>	
+		
+			<div id="segundaParte" >
+				<div class="container">
+				
+					<div class="row" id="segundaParteTitulo">
+						<div id="segundaParteTitulo1" class="col-xs-12 col-sm-12 col-md-12">
+							<h2>Noticias</h2>
+							<div id="teste"></div>
+						</div>
+					</div>	
+				
+					<div class="row" id="segundaParteRow">
+						<div id="segundaParte1" class="col-xs-4 col-sm-4 col-md-4" style="text-align: center; ">
+							<h3><b> Saiba como funciona as novas regras do IR2015</b></h3>
+							Saiba como serão as novas regras do IR2015,
+							como proceder o que fazer, e sempre que possível
+							consulte seu contador.
+							<br /><br />
+							<a href="" class="btn btn-primary" style="  color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
+						</div>
+						<div id="segundaParte2" class="col-xs-4 col-sm-4 col-md-4" style="text-align: center; ">
+							<h3><b> Tenha em mente seu tempo de aposentadoria</b></h3>
+							Tente fazer as contas e gerenciar seu tempo de trabalho
+							para saber o quanto tempo isso aind apode levar
+							<br /><br />
+							<a href="" class="btn btn-primary" style="  color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
+						</div>
+						<div id="segundaParte3" class="col-xs-4 col-sm-4 col-md-4" style="text-align: center; ">
+							<h3><b> Ja preciso me importar com o IR2016?</b></h3>
+							Saiba mais sobre as novidade que a receita esta 
+							aplicando para o quanto antes você puder declarar
+							melhor
+							<br /><br />
+							<a href="" class="btn btn-primary" style="  color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
+						</div>
+					</div>
+				
+				</div>
+			</div>	
+			
+			<div class="cinzae8e8e8" >
+				<div class="container" >
+				
+					<div class="row" id="parceirosTitulo">
+						<div id="parceirosTitulo1" class="col-xs-3 col-sm-3 col-md-12">
+							<h2>Parceiros</h2>
+						</div>
+					</div>	
+					
+					<div class="row" id="parceirosConteudo">
+						<div id="parceirosConteudo1" class="col-xs-3 col-sm-3 col-md-3" >
+							<img src="img/nissan.png" alt=""  style="width:100px; height:85px"/>
+						</div>
+						<div id="parceirosConteudo2" class="col-xs-3 col-sm-3 col-md-3">
+							<img src="img/google.png" alt="" style="width:100px; height:100px"/>
+						</div>
+						<div id="parceirosConteudo3" class="col-xs-3 col-sm-3 col-md-3">
+							<img src="img/dell.png" alt="" style="width:100px; height:100px" />
+						</div>
+						<div id="parceirosConteudo4" class="col-xs-3 col-sm-3 col-md-3">
+							<img src="img/bk.png" alt=""  style="width:100px; height:100px"/>
+						</div>					
+					</div>						
+
+					</div>	
+			</div>
+		</div>
+		
+		<footer>
+			<div class="container">
+				<div class="row">
+					
+					<div id="menuFooter" class="col-xs-4 col-sm-4 col-md-4">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">A Empresa</a></li>
+							<li><a href="#">Nossos Serviços</a></li>
+							<li><a href="#">Consultoria Jurídica</a></li>
+							<li><a href="#">Consultoria Fiscal e Tributário</a></li>
+							<li><a href="#">Contato</a></li>
+						</ul>
+					</div>
+					
+					<div id="redesSociais" class="col-xs-4 col-sm-4 col-md-4">
+						<h4>Siga nôs nas Redes Sociais</h4>
+						<ul>
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Googleplus</a></li>
+							<li><a href="#">Twitter</a></li>
+						</ul>
+					</div>
+					
+					<div id="logoFooter" class="col-xs-4 col-sm-4 col-md-4">
+						<img src="img/LogosHansen2.png" style="width:162px; height:53px" />
+					</div>
+					
+				</div>
+			</div>
+		</footer>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div id="direitos" class="col-xs-12 col-sm-12 col-md-12">
+						<p>&copy; Todos os direitos reservados.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
