@@ -129,6 +129,10 @@ a img {
 	background-color:#e8e8e8
 }
 
+.cinzaf5f5f5{
+	background-color:#f5f5f5
+}
+
 #tituloPagina{
 	text-align: center; 
 	padding-bottom: 60px
@@ -156,7 +160,7 @@ a img {
 }
 
 #segundaParte{
-	background: #f5f5f5;
+	background: #ffffff;
 	padding-top: 60px;
 	padding-bottom: 100px;
 }
@@ -168,8 +172,8 @@ a img {
 }
 	
 #parceirosConteudo{
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	text-align: center; 
 }
 
