@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<title>Hansen Contabilidade</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/estilo.css">
+		<link rel="icon" href="img/ico16.gif" type="image/gif" sizes="16x16">
+		
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src='js/bootstrap.min.js' type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#contatoItemMenu").addClass("active");
+				$('#alertCheck').hide();
+			});
+			
+			function checkForm(){
+				jQuery('#alertCheck').hide();
+				jQuery('#contactName').removeAttr('style');
+				jQuery('#contactMail').removeAttr('style');
+				jQuery('#contactSubject').removeAttr('style');
+				jQuery('#textArea').removeAttr('style');
+				var p_name = jQuery('#contactName').val();
+				var p_mail = jQuery('#contactMail').val();
+				var p_subject = jQuery('#contactSubject').val();
+				var p_text = jQuery('#textArea').val();
+				var error = false;
+				var msgErro = 'Favor se atentar aos campos em destaque';
+				if(p_name == ''){
+					error = true;
+					jQuery('#contactName').css('-webkit-box-shadow','0px 0px 5px 1px #cc0033');
+				}
+				if(p_mail == ''){
+					error = true;
+					jQuery('#contactMail').css('-webkit-box-shadow','0px 0px 5px 1px #cc0033');
+				}
+				if(p_subject == ''){
+					error = true;
+					jQuery('#contactSubject').css('-webkit-box-shadow','0px 0px 5px 1px #cc0033');
+				}
+				if(p_text == ''){
+					error = true;
+					jQuery('#textArea').css('-webkit-box-shadow','0px 0px 5px 1px #cc0033');
+				}
+				if(!error){
+					$('#contactForm').submit();
+
+				}
+			}
+		</script>
+		
+		<style>
+			fieldset {
+			    border: 0;
+			}
+			/* alerta de preenchimento */
+			.redInput {
+				-webkit-box-shadow: 0px 0px 5px 1px #cc0033;
+			}
+			/* botão enviar */
+			.button{
+				display:inline-block;
+				width:auto;
+				overflow:visible; /*IE6 e 7*/
+				outline:none; /*Somente a(link)*/
+				border: 1px solid #7AADCB;
+				background: #2C424F;
+				font:11px tahoma;
+				font-weight:700;
+				text-decoration:none;
+				text-transform:uppercase;
+				color:#E6EBE2!important;
+				cursor:pointer;
+				text-shadow: 0 1px 1px #666666;
+				padding:2px 6px 2px 6px!important;
+				line-height:19px;
+				margin:2px
+			}
+			.button:hover, .button:focus{
+				background:#5BB75B;
+				border: 1px solid #009900;
+				color:#fff!important;
+				cursor:pointer;
+				outline: none;
+				text-decoration:none!important
+			}
+			.button:active {
+				background:#479104
+			}
+			.button-circle{
+				display:inline-block;
+				width:auto;
+				overflow:visible; /*IE6 e 7*/
+				outline:none; /*Somente a(link)*/
+				background: #e6e6e6; /*background: #006DCC;*/
+				font:10px tahoma;
+				font-weight:700;
+				text-decoration:none;
+				text-transform:uppercase;
+				color:#666666!important;
+				cursor:pointer;
+				padding:3px 6px 3px 5px!important;
+				line-height:15px;
+				margin:2px
+			}
+			.button-circle:hover{
+				background:#6CE26C;
+				color:#030!important;
+				cursor:pointer;
+				outline: none;
+				text-decoration:none!important
+			}
+			.button, .msg {
+				border-radius: 4px;
+			}
+			.button-circle {
+				border-radius: 10px;
+			}
+			.button:hover, .button:focus {
+				box-shadow: 0 -1px 0 0 #fff inset, 0px 0px 5px #2C424F;
+			}
+			/* alerta */
+			.msg {
+				display:inline-block;
+				color:#FFF;
+				text-shadow: 0 1px 1px #426179;
+				padding:8px
+			}
+			.yellow {
+				background:#FAA732;
+				border:1px solid #F89406;
+			}
+			.ico {
+				background-image:url(img/icoSprites.png);
+				width:10px;
+				height:10px;
+				margin:4px;
+				display: inline-block;
+				float:left;
+				line-height:18px
+			}
+			/* formulario */
+			.grupo:after {
+			    content: ".";
+			    display: block;
+			    height: 0;
+			    clear: both;
+			    visibility: hidden;
+			}
+			.campo {
+			    margin-bottom: 1em;
+			}
+			.campo label {
+			    margin-bottom: 0.2em;
+			    display: block;
+			   	color: #663300;
+				font-weight: bold;
+			}
+			fieldset .grupo .campo {
+			    float:  left;
+			    margin-right: 1em;
+			}
+			.campo input[type="text"],
+			.campo input[type="email"],
+			.campo input[type="url"],
+			.campo input[type="tel"],
+			.campo select,
+			.campo textarea {
+			    padding: 0.2em;
+			    border: 1px solid #CCCCC;
+			    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+			    display: block;
+			    color: #663300;
+				background: #EDEDED;
+
+			}
+			.campo select option {
+			    padding-right: 1em;
+			}
+			.campo input:focus, .campo select:focus, .campo textarea:focus {
+			}
+			.campo label.checkbox {
+			    color: #000000;
+			    display: inline-block;
+			    margin-right: 1em;
+			}
+			.campo input {
+				color: #663300;
+				background: #EDEDED;
+				width: 100%;
+			}
+			#contact form fieldset{
+				width: 80%;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default" role="navigation" >
+			<div class="container" >
+				<div class="navbar-header" >
+					<a class="navbar-brand" href="#" style="padding-top:0px;">
+						<img src="img/LogosHansen.png" style="width:152px; height:50px" />
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-1" >
+					<ul class="nav navbar-nav">
+						<li id="homeItemMenu" class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="home.html">Home 1</a></li>
+								<li><a href="home2.html">Home 2</a></li>
+								<li><a href="home3.html">Home 3</a></li>
+							</ul>
+						</li>
+						<li id="empresaItemMenu" ><a href="empresa.html">A Empresa</a></li>
+						<li id="servicosItemMenu" class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Nossos Serviços <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="servicoContabil.html">Contabilidade</a></li>
+								<li><a href="servicoFiscal.html">Fiscal</a></li>
+								<li><a href="servicoPessoal.html">Pessoal</a></li>
+								<li><a href="servicoLegalizacao.html">Legalização</a></li>
+							</ul>
+						</li>
+						<li id="contatoItemMenu" ><a href="contato.html">Contato</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="wrapper cinzae8e8e8" role="main" >
+			<div class="container">
+				<div class="row" id="tituloPagina">
+					<div  class="col-md-12">
+						<h1> Contato </h1>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="row" id="conteudoPagina">
+						<div class="col-md-6">
+							<div style="text-align:center">
+								<img  src="img/contato.png" alt="" style="width:500px; height:200px;" />
+							</div>
+							<div style="padding-top:100px; text-align:center">
+								Tel: (11) 1234-1234 | (11) 9123-4567<br>
+								E-mail: contato@hansencontabilidade.com.br
+							</div>
+						</div>
+							<div class="col-md-6" id="contact" >
+								<form method="post" id="contactForm" action="#" >
+									<fieldset>
+										<div class="campo">
+											<label for="contactName" >Nome:</label>
+											<input id="contactName" name="contactName" type="text" value=""/>
+										</div>
+										<div class="campo">
+											<label for="contactMail" >E-mail:</label>
+											<input id="contactMail" name="contactMail" type="email" value="" />
+										</div>
+										<div class="campo">
+											<label for="contactSubject" >Assunto:</label>
+											<input id="contactSubject" name="contactSubject" type="text" value=""/>
+										</div>
+										<div class="campo">
+											<label for="textArea" >Texto:</label>
+											<textarea id="textArea" rows="4" cols="45" > </textarea>
+										</div>
+						
+										<a id="sendSubmit" class="button" onclick="checkForm()">Enviar</a>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>	
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					
+					<div id="menuFooter" class="col-md-4">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">A Empresa</a></li>
+							<li><a href="#">Nossos Serviços</a></li>
+							<li><a href="#">Consultoria Jurídica</a></li>
+							<li><a href="#">Consultoria Fiscal e Tributário</a></li>
+							<li><a href="#">Contato</a></li>
+						</ul>
+					</div>
+					
+					<div id="redesSociais" class="col-md-4">
+						<h4>Siga nôs nas Redes Sociais</h4>
+						<ul>
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Googleplus</a></li>
+							<li><a href="#">Twitter</a></li>
+						</ul>
+					</div>
+					
+					<div id="logoFooter" class="col-md-4">
+						<img src="img/LogosHansen.png" style="width:152px; height:60px" />
+					</div>
+					
+				</div>
+			</div>
+		</footer>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p>&copy; Todos os direitos reservados.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
