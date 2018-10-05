@@ -32,6 +32,40 @@
 				$('#parceirosConteudo4').hide();
 				$('#direitos').hide();
 				
+				console.log(window.screen.height);
+				console.log(window.screen.width);
+				
+				if(window.screen.width == 1024){
+					$("#slideImg1").addClass("slide-img-size-1024");
+					$("#slideImg2").addClass("slide-img-size-1024");
+					$("#slideImg3").addClass("slide-img-size-1024");
+					$("#slideMain").addClass("slide-img-size-1024");
+					$("#slideShow").addClass("slide-img-size-1024");
+					$("#slideShow1").addClass("slide-img-size-1024");
+					$("#slideShowRow").addClass("slide-img-size-1024");
+					$("#slide").addClass("slide-img-size-1024");
+				} else if(window.screen.width == 1280) {
+					$("#slideImg1").addClass("slide-img-size-1920");
+					$("#slideImg2").addClass("slide-img-size-1920");
+					$("#slideImg3").addClass("slide-img-size-1920");
+					$("#slideMain").addClass("slide-img-size-1920");
+					$("#slideShow").addClass("slide-img-size-1920");
+					$("#slideShow1").addClass("slide-img-size-1920");
+					$("#slideShowRow").addClass("slide-img-size-1920");
+					$("#slide").addClass("slide-img-size-1920");
+				} else {
+					$("#slideImg1").addClass("slide-img-size-1920");
+					$("#slideImg2").addClass("slide-img-size-1920");
+					$("#slideImg3").addClass("slide-img-size-1920");
+					$("#slideMain").addClass("slide-img-size-1920");
+					$("#slideShow").addClass("slide-img-size-1920");
+					$("#slideShow1").addClass("slide-img-size-1920");
+					$("#slideShowRow").addClass("slide-img-size-1920");
+					$("#slide").addClass("slide-img-size-1920");
+				}
+				
+				
+				
 				<!-- var texto = $('.ativo').attr('alt'); -->
 				<!-- $('#slide p').hide().html(texto).delay(500).fadeIn(1000,'linear'); -->
 			
@@ -112,9 +146,9 @@
 					<div id="slideShow1" class="col-xs-12 col-sm-12 col-md-12">
 						<figure id="slide">
 							<!--  <p></p> -->
-							<img src="img/pic10.png" class="img-responsive"  />
-							<img src="img/pic11.png" class="img-responsive"  />
-							<img src="img/pic12.png" class="img-responsive"  />
+							<img id="slideImg1" src="img/pic10.png" class="img-responsive"  />
+							<img id="slideImg2" src="img/pic11.png" class="img-responsive"  />
+							<img id="slideImg3" src="img/pic12.png" class="img-responsive"  />
 						</figure>
 					</div>
 				</div>
