@@ -15,6 +15,7 @@
 		
 		<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
 		<script src='js/bootstrap.min.js' type="text/javascript"></script>
+		<script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
 
 		
 		<script type="text/javascript">
@@ -98,6 +99,33 @@
 					
 					if($(this).scrollTop() > 950){
 						$('#direitos').show('slow');
+					}
+				});
+				
+				//feed to parse
+				var url = "http://feeds.feedburner.com/rss-rfb-noticias?format=xml";
+				
+				feednami.load(url,function(result){
+					if(result.error) {
+						console.log(result.error);
+					} else {
+						var entries = result.feed.entries;
+						for(var i = 0; i < 3; i++){
+							var entry = entries[i];
+							if(i == 0){
+								$("#segundaParte1 h4 b").text(entry.title);
+								$("#segundaParte1 a").attr("href", entry.origlink)
+							} else if(i == 1){
+								$("#segundaParte2 h4 b").text(entry.title);
+								$("#segundaParte2 a").attr("href", entry.origlink)
+							} else if(i == 2){
+								$("#segundaParte3 h4 b").text(entry.title);
+								$("#segundaParte3 a").attr("href", entry.origlink)
+							}
+							
+							//console.dir(entry);
+						}
+
 					}
 				});
 			});
@@ -208,27 +236,19 @@
 				
 					<div class="row" id="segundaParteRow">
 						<div id="segundaParte1" class="col-xs-4 col-sm-4 col-md-4" style="text-align: center; ">
-							<h3><b> Saiba como funciona as novas regras do IR2015</b></h3>
-							Saiba como serão as novas regras do IR2015,
-							como proceder o que fazer, e sempre que possível
-							consulte seu contador.
+							<h4><b> Saiba como funciona as novas regras do IR2015</b></h4>
 							<br /><br />
-							<a href="" class="btn btn-primary" style="  color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
+							<a href="" class="btn btn-primary" target="_blank" style="color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
 						</div>
 						<div id="segundaParte2" class="col-xs-4 col-sm-4 col-md-4" style="text-align: center; ">
-							<h3><b> Tenha em mente seu tempo de aposentadoria</b></h3>
-							Tente fazer as contas e gerenciar seu tempo de trabalho
-							para saber o quanto tempo isso aind apode levar
+							<h4><b> Tenha em mente seu tempo de aposentadoria</b></h4>
 							<br /><br />
-							<a href="" class="btn btn-primary" style="  color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
+							<a href="" class="btn btn-primary" target="_blank" style="color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
 						</div>
 						<div id="segundaParte3" class="col-xs-4 col-sm-4 col-md-4" style="text-align: center; ">
-							<h3><b> Ja preciso me importar com o IR2016?</b></h3>
-							Saiba mais sobre as novidade que a receita esta 
-							aplicando para o quanto antes você puder declarar
-							melhor
+							<h4><b> Ja preciso me importar com o IR2016?</b></h4>
 							<br /><br />
-							<a href="" class="btn btn-primary" style="  color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
+							<a href="" class="btn btn-primary" target="_blank" style="color: #fff;background-color: #ab0132;border-color: #92012b;">Saiba Mais</a>
 						</div>
 					</div>
 				
